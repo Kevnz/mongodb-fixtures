@@ -212,9 +212,7 @@ var populate = function(db, cb) {
         // Walk through the keys of a record, recursively
         walk(fixtures[collectionName][recordId]);
         
-        // TODO: Only do this when changes take place
-        console.log(fixtures);
-        console.log('id', fixtures[collectionName][recordId]._id);
+ 
         if(fixtures[collectionName][recordId]._id) {
           collection.update({'_id': fixtures[collectionName][recordId]._id}, fixtures[collectionName][recordId], true, function(e, docs){
             if (e) {
